@@ -112,6 +112,9 @@ class EtsyApi
 		$query_pairs = array();
 		$allowed = array("limit", "offset", "page", "sort_on", "sort_order", "include_private", "language");
 
+		// Add parameters that I need to work
+		array_push($allowed, 'min_last_modified', 'max_last_modified', 'was_paid', 'was_shipped');
+
 		if ($params) {
 			foreach($params as $key=>$value) {
 				if (in_array($key, $allowed)) {
